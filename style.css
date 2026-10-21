@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+}
+
+.game-container h1 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Área onde ficam as pílulas de países */
+.countries-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    min-height: 50px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.country {
+    background-color: #3b82f6;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: grab;
+    user-select: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.15s ease;
+}
+
+.country span {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.country:active {
+    cursor: grabbing;
+}
+
+/* Área das caixas dos continentes */
+.continents-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.continent-box {
+    border: 2px dashed #cbd5e1;
+    border-radius: 10px;
+    width: 30%;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    background-color: #f8fafc;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.continent-box .label {
+    font-size: 13px;
+    color: #475569;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+/* Feedback Visual de Acerto e Erro */
+.continent-box.correct {
+    border-color: #22c55e;
+    background-color: #f0fdf4;
+}
+
+.continent-box.wrong {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Animação para caso erre a combinação */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}

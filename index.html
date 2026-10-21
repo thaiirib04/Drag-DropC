@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encaixe o País no Continente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <h1>🌎 Encaixe o País no Continente</h1>
+
+        <!-- Área dos países para arrastar -->
+        <div class="countries-container" id="countries">
+            <div class="country" draggable="true" ondragstart="drag(event)" id="brasil" data-continent="america-do-sul">
+                Brasil <span>BR</span>
+            </div>
+            <div class="country" draggable="true" ondragstart="drag(event)" id="japao" data-continent="asia">
+                Japão <span>JP</span>
+            </div>
+            <div class="country" draggable="true" ondragstart="drag(event)" id="franca" data-continent="europa">
+                França <span>FR</span>
+            </div>
+        </div>
+
+        <!-- Área dos continentes (alvos) -->
+        <div class="continents-container">
+            <div class="continent-box" ondragover="allowDrop(event)" ondrop="drop(event)" data-continent="america-do-sul">
+                <span class="label">América do Sul</span>
+            </div>
+            <div class="continent-box" ondragover="allowDrop(event)" ondrop="drop(event)" data-continent="europa">
+                <span class="label">Europa</span>
+            </div>
+            <div class="continent-box" ondragover="allowDrop(event)" ondrop="drop(event)" data-continent="asia">
+                <span class="label">Ásia</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
